@@ -33,13 +33,16 @@ apps/admin/src/domain/{feature}/
 ├── hooks/
 │   ├── index.ts
 │   └── {feature}.hooks.ts
-└── actions/
-    └── {feature}.actions.ts    — 'use server'
+├── actions/
+│   └── {feature}.actions.ts    — 'use server'
+└── validations/
+    └── {feature}.validations.ts — Zod 스키마 (Server Action + Form 공유)
 ```
 
 레이어 규칙:
 - 크로스 도메인 deep import 금지: `@/domain/servers/queries/...` ❌ → `@/domain/servers` ✅
-- `actions/`, `service/`에는 `index.ts` 불필요 (루트에서 직접 export)
+- `actions/`, `service/`, `validations/`에는 `index.ts` 불필요 (루트에서 직접 export)
+- 검증(Zod) 스키마는 해당 도메인의 `validations/{feature}.validations.ts`에 둔다. 앱 루트 `lib/`는 여러 도메인이 실제로 공유하는 것만 남긴다(예: 공통 ActionResult 봉투, 인증 헬퍼, 공용 포맷터).
 
 ---
 
