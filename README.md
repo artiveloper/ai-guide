@@ -26,7 +26,7 @@
 | `dba-advisor` | `db-architecture` | 정규화, 인덱스 전략, 마이그레이션 안전성, N+1/락 이슈 |
 | `qa-backend` | `qa-backend-strategy` | API 계약 검증, 통합 테스트 우선순위, 동시성·회귀 방지 |
 
-> 기술 스킬: `supabase-guide`
+> 기술 스킬: `supabase-guide`, `python-guide`
 
 ### `front/` — 프론트엔드
 
